@@ -1,0 +1,400 @@
+/* ===============================================================================
+Styles for social card:
+
+Combining Grid & Flexbox: https://getflywheel.com/layout/combine-flexbox-and-css-grids-for-layouts-how-to/
+
+=================================================================================== */
+
+
+/* Import styles */
+
+
+/* Spartan*/
+
+
+/* 400 */
+
+@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
+
+/* 500 */
+
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500&display=swap');
+
+/* 700 */
+
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+/* Custom Properties  */
+
+:root {
+    /* Primary */
+    --Dark-Magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    /* Neautral */
+    --darkgray: hsl(303, 10%, 53%);
+    --lightgray: hsla(300, 24%, 96%, 0.857);
+    --white: hsl(0, 0%, 100%);
+}
+
+
+/* Resets */
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Background Images */
+
+
+/* Top left */
+
+body {
+    /* padding: 5rem; */
+    /* outline: solid 2px black; */
+    position: absolute;
+    background-image: url("/images/bg-pattern-top-desktop.svg");
+    background-repeat: no-repeat;
+    max-width: 100%;
+}
+
+
+/* Bottom right */
+
+.bottom {
+    /* border: 1px solid black; */
+    max-width: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    /* Image under text */
+    z-index: -1;
+    overflow: hidden;
+}
+
+
+/* Main Grid - two column top section */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Padding needs to be removed / reduced at breakpoints */
+    padding: 10rem 15rem;
+    /* border: 1px solid black; */
+}
+
+
+/* grid header section */
+
+.item1 {
+    width: 80%;
+    /* border: 0.5rem solid black; */
+}
+
+
+/* header styles content */
+
+.main-h {
+    font-family: 'spartan', 'sans-serif';
+    font-weight: 700;
+    font-size: 5rem;
+    color: var(--Dark-Magenta);
+}
+
+.main-p {
+    font-family: 'spartan', 'sans-serif';
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    /* margin-bottom: 4rem; */
+    line-height: 1.6;
+    color: var(--darkgray);
+}
+
+
+/* Stars added to reviews */
+
+.star-container {
+    margin-left: 3rem;
+}
+
+.star {
+    width: 2rem;
+    float: left;
+    margin: 2.2rem 0.5rem;
+}
+
+
+/* Review list style content */
+
+.list-p {
+    font-family: 'spartan', 'sans-serif';
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-top: 2.7rem;
+    margin-left: 21rem;
+    color: var(--Dark-Magenta);
+}
+
+
+/* Sections stored within item2, second column grid item (star reviews) */
+
+.newcontainer {
+    display: grid;
+    /* border: 0.5rem solid black; */
+}
+
+.list-one,
+.list-two,
+.list-three {
+    margin-top: 1rem;
+    background-color: var(--lightgray);
+    width: 79%;
+    height: 7rem;
+    border-radius: 1rem;
+}
+
+.list-two {
+    margin-left: 6rem;
+}
+
+.list-three {
+    margin-left: 12rem;
+}
+
+
+/* Bottom row of grid */
+
+.item3 {
+    /* Make bottom row span entire width */
+    grid-column: 1/4;
+    /* border: 0.5rem solid black; */
+}
+
+
+/* Second row sub grid */
+
+.boxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 7rem;
+    /* border: 0.5rem solid black; */
+}
+
+
+/* General box styling */
+
+.box-flex {
+    /* border: 0.5rem solid black; */
+    width: 36rem;
+    height: 25rem;
+    background-color: var(--Dark-Magenta);
+    border-radius: 1rem;
+}
+
+
+/* Individual box spacing */
+
+.box-two {
+    margin-top: 2rem;
+}
+
+.box-three {
+    margin-top: 4rem;
+}
+
+
+/* Card / box bottom section style content */
+
+.profile {
+    border-radius: 5rem;
+    width: 14%;
+    margin-top: 4rem;
+    margin-left: 3rem;
+    margin-right: 2.3rem;
+    float: left;
+}
+
+.box-h1 {
+    margin-top: 4.5rem;
+    line-height: 2;
+    font-family: 'spartan', 'sans-serif';
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--white);
+}
+
+.box-h2 {
+    margin-bottom: 4rem;
+    font-family: 'spartan', 'sans-serif';
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--soft-pink);
+}
+
+.box-p {
+    padding: 0 3rem;
+    line-height: 1.6;
+    font-family: 'spartan', 'sans-serif';
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--lightgray);
+}
+
+
+/* Responsive section */
+
+
+/* Larger screen sizes */
+
+@media(min-width: 1500px) {
+    .box-flex {
+        width: 100%;
+        /* background-color: red; */
+    }
+    .profile {
+        width: 5%;
+    }
+}
+
+
+/* Medium breakpoints */
+
+@media (max-width: 1366px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5rem 15rem;
+    }
+    .item1 {
+        /* centre text header */
+        margin: auto;
+        width: 50%;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .star-container {
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+    }
+    .star {
+        margin-top: 1rem;
+    }
+    .list-p {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+    .lists {
+        width: 100%;
+    }
+    .list-two {
+        margin-left: 0;
+    }
+    .list-three {
+        margin-left: 0;
+    }
+    .boxes {
+        margin-top: 3rem;
+    }
+    .box-two {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .box-three {
+        margin-top: 0;
+        margin-bottom: 2rem;
+        /* add spaccing between cards */
+    }
+}
+
+
+/* Sort the boxes out */
+
+@media(max-width: 1400px) {
+    .box-flex {
+        width: 51%;
+    }
+    .boxes {
+        display: flex;
+        justify-content: center;
+        margin-top: 5rem;
+    }
+    .box-two {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .box-three {
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+@media(max-width: 1016px) {
+    .box-flex {
+        width: 36rem;
+        height: 25rem;
+    }
+}
+
+
+/* Smaller Screens */
+
+@media(max-width:896px) {
+    .item {
+        width: 100%;
+    }
+}
+
+@media(max-width:598px) {
+    .container {
+        padding: 3rem 3rem;
+    }
+    .main-h {
+        font-size: 3rem;
+    }
+    .main-p {
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width:375px) {
+    .box-h1 {
+        margin-top: 4rem;
+    }
+}
+
+@media(max-width:320px) {
+    .box-h1 {
+        margin-top: 3.7rem;
+    }
+    .box-h2 {
+        margin-bottom: 3rem;
+    }
+}
+
+
+/* Screen height */
+
+@media screen and (min-width: 1439px),
+screen and (min-height: 1025px) {
+    .container {
+        height: 100vh;
+    }
+}
